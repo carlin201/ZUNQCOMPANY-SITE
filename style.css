@@ -460,11 +460,17 @@ img{ max-width:100%; display:block; }
 .project-card:hover{ border-color: var(--border-strong); transform: translateY(-3px); }
 .project-card__thumb{
   aspect-ratio: 4/3;
-  background:
-    linear-gradient(135deg, var(--surface-2), var(--surface)),
-    repeating-linear-gradient(45deg, transparent 0 12px, rgba(255,255,255,0.02) 12px 24px);
+  background: var(--surface-2);
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
+.project-card__thumb img{
+  width:100%; height:100%;
+  object-fit: cover;
+  display:block;
+  transition: transform .4s var(--ease);
+}
+.project-card:hover .project-card__thumb img{ transform: scale(1.04); }
 .project-card__cat{
   font-size: 0.78rem;
   color: var(--blue-soft);
