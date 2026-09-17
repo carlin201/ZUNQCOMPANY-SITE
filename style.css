@@ -138,21 +138,8 @@ img{ max-width:100%; display:block; }
   display:flex; align-items:center; justify-content:space-between;
   height: 72px;
 }
-.navbar__logo{ display:flex; align-items:center; gap:10px; }
-.logo-mark{ color: var(--blue); display:flex; }
-.logo-text{
-  font-family:'Space Grotesk', sans-serif;
-  font-weight:700; font-size:1.15rem;
-  letter-spacing: 0.01em;
-  display:flex; flex-direction:column; line-height:1;
-}
-.logo-text__sub{
-  font-size: 0.5rem;
-  font-weight:500;
-  color: var(--text-faint);
-  letter-spacing: 0.18em;
-  margin-top:3px;
-}
+.navbar__logo{ display:flex; align-items:center; }
+.logo-mark{ display:block; height:32px; width:auto; }
 
 .navbar__links{ display:flex; gap:34px; }
 .navbar__links a{
