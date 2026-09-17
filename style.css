@@ -666,14 +666,85 @@ img{ max-width:100%; display:block; }
 /* ---------- Reveal animation ---------- */
 .reveal{
   opacity:0;
-  transform: translateY(16px);
-  transition: opacity .6s var(--ease), transform .6s var(--ease);
+  transform: translateY(20px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+  transition-delay: var(--reveal-delay, 0s);
 }
 .reveal.is-visible{ opacity:1; transform:none; }
+
+/* ---------- Scroll progress bar ---------- */
+.scroll-progress{
+  position:fixed; top:0; left:0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue), var(--blue-soft));
+  z-index: 200;
+  transition: width .1s linear;
+}
+
+/* ---------- Cursor glow on buttons ---------- */
+.btn{
+  --mx: 50%; --my: 50%;
+}
+.btn--ghost::after{
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(circle 80px at var(--mx) var(--my), rgba(122,158,250,0.18), transparent 70%);
+  opacity:0;
+  transition: opacity .3s var(--ease);
+  pointer-events:none;
+}
+.btn--ghost:hover::after{ opacity:1; }
+
+/* ---------- Card tilt ---------- */
+.project-card, .about__media{
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ---------- Orbit lines: slow continuous rotation ---------- */
+.orbit-line--1{ animation: spin-slow 26s linear infinite; }
+.orbit-line--2{ animation: spin-slow-rev 34s linear infinite; }
+@keyframes spin-slow{ from{ transform: rotate(0deg); } to{ transform: rotate(360deg); } }
+@keyframes spin-slow-rev{ from{ transform: rotate(360deg); } to{ transform: rotate(0deg); } }
+
+/* ---------- Logo entrance ---------- */
+.logo-showcase img{
+  animation: logo-float 5.5s ease-in-out infinite;
+}
+@keyframes logo-float{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
+
+/* ---------- Hero title entrance (on load, independent of scroll) ---------- */
+.hero__kicker, .hero__title, .hero__text, .hero__actions, .hero__note{
+  opacity:0;
+  transform: translateY(14px);
+  animation: hero-in .7s var(--ease) forwards;
+}
+.hero__kicker{ animation-delay: .05s; }
+.hero__title{ animation-delay: .15s; }
+.hero__text{ animation-delay: .28s; }
+.hero__actions{ animation-delay: .4s; }
+.hero__note{ animation-delay: .5s; }
+@keyframes hero-in{ to{ opacity:1; transform:none; } }
+
+/* ---------- Section label line draw-in ---------- */
+.section__label::before, .hero__kicker::before{
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .6s var(--ease) .2s;
+}
+.reveal.is-visible .section__label::before{ transform: scaleX(1); }
+.hero__kicker::before{ animation: line-in .5s var(--ease) .5s forwards; }
+@keyframes line-in{ from{ transform: scaleX(0); } to{ transform: scaleX(1); } }
 
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior:auto !important; }
   .reveal{ opacity:1; transform:none; }
+  .hero__kicker, .hero__title, .hero__text, .hero__actions, .hero__note{ opacity:1; transform:none; animation:none; }
+  .orbit-line--1, .orbit-line--2, .logo-showcase img{ animation:none; }
 }
 
 /* =========================================================
