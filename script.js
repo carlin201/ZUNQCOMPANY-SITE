@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNavbarScroll();
   setupMobileMenu();
   setupScrollReveal();
+  setupScrollProgress();
+  setupButtonGlow();
+  setupCardTilt();
   setupContactForm();
 });
 
@@ -83,6 +86,19 @@ function setupScrollReveal() {
     return;
   }
 
+  // Escalona a entrada de elementos que compartilham o mesmo grupo/container
+  const groups = new Map();
+  items.forEach((el) => {
+    const parent = el.parentElement;
+    if (!groups.has(parent)) groups.set(parent, []);
+    groups.get(parent).push(el);
+  });
+  groups.forEach((siblings) => {
+    siblings.forEach((el, i) => {
+      el.style.setProperty("--reveal-delay", `${Math.min(i * 90, 360)}ms`);
+    });
+  });
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -96,6 +112,63 @@ function setupScrollReveal() {
   );
 
   items.forEach((el) => observer.observe(el));
+}
+
+// ---------- BARRA DE PROGRESSO DE SCROLL ----------
+function setupScrollProgress() {
+  const bar = document.getElementById("scrollProgress");
+  if (!bar) return;
+
+  const onScroll = () => {
+    const scrollTop = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (scrollTop / max) * 100 : 0;
+    bar.style.width = `${pct}%`;
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+}
+
+// ---------- BRILHO SEGUINDO O CURSOR NOS BOTÕES ----------
+function setupButtonGlow() {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  if (prefersReducedMotion) return;
+
+  document.querySelectorAll(".btn--ghost").forEach((btn) => {
+    btn.addEventListener("mousemove", (e) => {
+      const rect = btn.getBoundingClientRect();
+      btn.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+      btn.style.setProperty("--my", `${e.clientY - rect.top}px`);
+    });
+  });
+}
+
+// ---------- INCLINAÇÃO 3D SUAVE NOS CARDS ----------
+function setupCardTilt() {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  if (prefersReducedMotion) return;
+
+  const cards = document.querySelectorAll(".project-card, .about__media");
+
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateX = ((y / rect.height) - 0.5) * -6;
+      const rotateY = ((x / rect.width) - 0.5) * 6;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
 }
 
 // ---------- FORMULÁRIO DE CONTATO ----------
