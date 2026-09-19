@@ -473,6 +473,54 @@ img{ max-width:100%; display:block; }
   flex-shrink:0;
 }
 
+/* ---------- Stack tecnológica ---------- */
+.stack-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.stack-group h3{
+  font-family:'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+  font-weight:600;
+  color: var(--text-faint);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.stack-pills{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+.stack-pill{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  padding: 9px 2px;
+  transition: color .2s var(--ease), transform .2s var(--ease);
+}
+.stack-pill::before{
+  content:'';
+  width:5px; height:5px;
+  border-radius:50%;
+  background: var(--blue-soft);
+  flex-shrink:0;
+  opacity:0.7;
+}
+.stack-pill:hover{ color: var(--text); transform: translateX(3px); }
+
+@media (max-width: 1024px){
+  .stack-grid{ grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+}
+@media (max-width: 640px){
+  .stack-grid{ grid-template-columns: 1fr; gap: 28px; }
+}
+
 /* ---------- Timeline ---------- */
 .timeline{
   display:grid;
