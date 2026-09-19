@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupButtonGlow();
   setupCardTilt();
   setupContactForm();
+  setupScrollSpy();
 });
 
 // ---------- WHATSAPP ----------
@@ -169,6 +170,40 @@ function setupCardTilt() {
       card.style.transform = "";
     });
   });
+}
+
+// ---------- LINK ATIVO NA NAVBAR (scrollspy) ----------
+function setupScrollSpy() {
+  const links = document.querySelectorAll('.navbar__links a[href^="#"]');
+  if (!links.length || !("IntersectionObserver" in window)) return;
+
+  const sections = [];
+  links.forEach((link) => {
+    const id = link.getAttribute("href").slice(1);
+    const section = document.getElementById(id);
+    if (section) sections.push({ id, link, section });
+  });
+  if (!sections.length) return;
+
+  const setActive = (id) => {
+    links.forEach((link) => {
+      link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const match = sections.find((s) => s.section === entry.target);
+          if (match) setActive(match.id);
+        }
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+  );
+
+  sections.forEach(({ section }) => observer.observe(section));
 }
 
 // ---------- FORMULÁRIO DE CONTATO ----------
