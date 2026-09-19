@@ -3,6 +3,7 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/modelos.html", "destination": "/modelos", "permanent": true }
+    { "source": "/modelos.html", "destination": "/modelos", "permanent": true },
+    { "source": "/termos.html", "destination": "/termos", "permanent": true }
   ]
 }
