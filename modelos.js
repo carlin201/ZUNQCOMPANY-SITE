@@ -18,7 +18,7 @@ function ctaBlock() {
       <h3>Gostou deste modelo?</h3>
       <p>Podemos criar uma solução personalizada para sua empresa.</p>
       <div class="demo-cta__actions">
-        <a href="index.html#contato" class="btn btn--primary">Quero um projeto assim</a>
+        <a href="/#contato" class="btn btn--primary">Quero um projeto assim</a>
         <a href="#" class="btn btn--ghost js-demo-whats" target="_blank" rel="noopener">Falar com a ZUNQ</a>
       </div>
     </div>
