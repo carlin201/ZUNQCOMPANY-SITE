@@ -732,8 +732,16 @@ img{ max-width:100%; display:block; }
 .footer__bottom{
   border-top: 1px solid var(--border);
   padding: 22px 0;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:10px;
 }
 .footer__bottom p{ font-size: 0.82rem; color: var(--text-faint); }
+.footer__legal{ display:flex; gap:18px; }
+.footer__legal a{
+  font-size: 0.82rem; color: var(--text-faint);
+  transition: color .2s var(--ease);
+}
+.footer__legal a:hover{ color: var(--blue-soft); }
 
 /* ---------- Reveal animation ---------- */
 .reveal{
