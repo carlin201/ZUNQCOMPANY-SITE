@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZUNQ COMPANY — Sites, SaaS e Soluções Digitais</title>
+<meta content="A ZUNQ COMPANY cria sites, landing pages, SaaS, sistemas web e soluções digitais profissionais para empresas." name="description"/>
+<meta content="ZUNQ COMPANY — Sites, SaaS e Soluções Digitais" property="og:title"/>
+<meta content="Criamos sites, landing pages, SaaS e soluções digitais pensadas para transformar ideias em experiências profissionais, modernas e eficientes." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/img/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#06080D" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,"script",
+"https://connect.facebook.net/en_US/fbevents.js");
+fbq("init", "934546016382273");
+fbq("track", "PageView");
+</script>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=934546016382273&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+<div class="wrap navbar__inner">
+<a aria-label="ZUNQ COMPANY — início" class="navbar__logo" href="#topo">
+<img alt="ZUNQ COMPANY" class="logo-mark" height="32" src="img/logo.png"/>
+</a>
+<nav aria-label="Navegação principal" class="navbar__links" id="navLinks">
+<a data-i18n="nav_home" href="#topo">Início</a>
+<a data-i18n="nav_solucoes" href="#solucoes">Soluções</a>
+<a data-i18n="nav_modelos" href="/modelos">Modelos</a>
+<a data-i18n="nav_processo" href="#processo">Processo</a>
+<a data-i18n="nav_projetos" href="#projetos">Projetos</a>
+<a data-i18n="nav_sobre" href="#sobre">Sobre</a>
+<a data-i18n="nav_contato" href="#contato">Contato</a>
+</nav>
+<div class="navbar__actions">
+<div class="lang-switch" id="langSwitch">
+<button aria-expanded="false" aria-haspopup="listbox" class="lang-switch__btn" id="langSwitchBtn" type="button">
+<svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9z"/></svg>
+<span id="langSwitchLabel">PT</span>
+</button>
+<ul class="lang-switch__menu" id="langSwitchMenu" role="listbox">
+<li data-lang="pt" role="option"><span class="lang-flag">🇧🇷</span> Português</li>
+<li data-lang="en" role="option"><span class="lang-flag">🇺🇸</span> English</li>
+<li data-lang="es" role="option"><span class="lang-flag">🇪🇸</span> Español</li>
+</ul>
+</div>
+<a class="btn btn--primary btn--sm" data-i18n="cta_navbar" data-zunq-event="cta_click" data-zunq-location="navbar" href="#contato">Falar com a Zunq</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu" class="hamburger" id="hamburgerBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<nav aria-label="Navegação mobile">
+<a data-i18n="nav_home" href="#topo">Início</a>
+<a data-i18n="nav_solucoes" href="#solucoes">Soluções</a>
+<a data-i18n="nav_modelos" href="/modelos">Modelos</a>
+<a data-i18n="nav_processo" href="#processo">Processo</a>
+<a data-i18n="nav_projetos" href="#projetos">Projetos</a>
+<a data-i18n="nav_sobre" href="#sobre">Sobre</a>
+<a data-i18n="nav_contato" href="#contato">Contato</a>
+</nav>
+<div class="lang-switch lang-switch--mobile" id="langSwitchMobile" role="listbox">
+<button data-lang="pt" role="option" type="button"><span class="lang-flag">🇧🇷</span> PT</button>
+<button data-lang="en" role="option" type="button"><span class="lang-flag">🇺🇸</span> EN</button>
+<button data-lang="es" role="option" type="button"><span class="lang-flag">🇪🇸</span> ES</button>
+</div>
+<a class="btn btn--primary" data-i18n="cta_navbar" data-zunq-event="cta_click" data-zunq-location="navbar_mobile" href="#contato">Falar com a Zunq</a>
+</div>
+</header>
+<main id="conteudo">
+<!-- ================= HERO ================= -->
+<section class="hero" id="topo">
+<div aria-hidden="true" class="hero__grid"></div>
+<div aria-hidden="true" class="hero__glow"></div>
+<div class="wrap hero__inner">
+<div class="hero__content reveal">
+<p class="hero__kicker" data-i18n="hero_kicker">ZUNQ COMPANY</p>
+<h1 class="hero__title" data-i18n="hero_title">Sua empresa merece uma presença digital à altura do seu negócio.</h1>
+<p class="hero__text" data-i18n="hero_text">Criamos sites, landing pages, SaaS e soluções digitais pensadas para transformar ideias em experiências profissionais, modernas e eficientes.</p>
+<div class="hero__actions">
+<a class="btn btn--primary btn--lg" data-i18n="cta_project" data-zunq-event="project_request" data-zunq-location="hero" href="#contato">Solicitar um projeto</a>
+<a class="btn btn--ghost btn--lg" data-i18n="cta_whatsapp" data-zunq-event="whatsapp_click" data-zunq-location="hero" href="#" id="whatsBtnHero" rel="noopener" target="_blank">Falar com especialista</a>
+</div>
+<p class="hero__note">
+<span aria-hidden="true" class="dot"></span><span data-i18n="note_response_time">Respondemos em questão de minutos.</span></p>
+</div>
+<div class="hero__visual reveal">
+<div class="logo-showcase">
+<img alt="ZUNQ COMPANY" src="img/logo.png"/>
+</div>
+<div aria-hidden="true" class="orbit-line orbit-line--1"></div>
+<div aria-hidden="true" class="orbit-line orbit-line--2"></div>
+</div>
+</div>
+</section>
+<!-- ================= STATS ================= -->
+<section class="stats-strip">
+<div class="wrap stats-strip__inner">
+<div class="stat reveal">
+<span class="stat__num" data-count="40" data-suffix="+">0</span>
+<p class="stat__label" data-i18n="stat_projects">Projetos entregues</p>
+</div>
+<div class="stat reveal">
+<span class="stat__num" data-count="98" data-suffix="%">0</span>
+<p class="stat__label" data-i18n="stat_satisfaction">Satisfação dos clientes</p>
+</div>
+<div class="stat reveal">
+<span class="stat__num" data-count="1" data-suffix="h">0</span>
+<p class="stat__label" data-i18n="stat_response">Tempo médio de resposta</p>
+</div>
+<div class="stat reveal">
+<span class="stat__num" data-count="5" data-suffix="+">0</span>
+<p class="stat__label" data-i18n="stat_experience">Anos de experiência combinada</p>
+</div>
+</div>
+</section>
+<!-- ================= O QUE CRIAMOS ================= -->
+<section class="section" id="solucoes">
+<div class="wrap">
+<div class="section__head reveal">
+<p class="section__label" data-i18n="solucoes_label">Soluções — 02</p>
+<h2 data-i18n="solucoes_title">Tecnologia criada para o seu negócio.</h2>
+<p data-i18n="solucoes_text">Não entregamos apenas páginas bonitas. Criamos experiências digitais pensadas para comunicar, converter e fazer sua empresa evoluir.</p>
+</div>
+<div class="solutions-list">
+<article class="solution-row reveal">
+<span class="solution-row__num">01</span>
+<h3 data-i18n="sol_sites_title">Sites</h3>
+<p data-i18n="sol_sites_text">Sites profissionais, rápidos e responsivos para fortalecer a presença digital da empresa.</p>
+<svg class="solution-row__icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="4"></rect><path d="M3 9h18"></path><circle cx="6.5" cy="6.5" fill="currentColor" r=".6" stroke="none"></circle></svg>
+</article>
+<article class="solution-row reveal">
+<span class="solution-row__num">02</span>
+<h3 data-i18n="sol_landing_title">Landing Pages</h3>
+<p data-i18n="sol_landing_text">Páginas focadas em campanhas, produtos, serviços e geração de leads.</p>
+<svg class="solution-row__icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><path d="M4 19V6a1 1 0 011-1h9l6 6v8a1 1 0 01-1 1H5a1 1 0 01-1-1z"></path><path d="M14 5v5h5"></path><path d="M8 13h8M8 16h5"></path></svg>
+</article>
+<article class="solution-row reveal">
+<span class="solution-row__num">03</span>
+<h3 data-i18n="sol_saas_title">SaaS</h3>
+<p data-i18n="sol_saas_text">Produtos digitais e plataformas web desenvolvidos de acordo com a necessidade do negócio.</p>
+<svg class="solution-row__icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"></path><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"></path></svg>
+</article>
+<article class="solution-row reveal">
+<span class="solution-row__num">04</span>
+<h3 data-i18n="sol_sistemas_title">Sistemas Web</h3>
+<p data-i18n="sol_sistemas_text">Sistemas internos, painéis administrativos e ferramentas personalizadas.</p>
+<svg class="solution-row__icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><rect height="7" rx="1" width="7" x="3" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="3"></rect><rect height="7" rx="1" width="7" x="3" y="14"></rect><rect height="7" rx="1" width="7" x="14" y="14"></rect></svg>
+</article>
+<article class="solution-row reveal">
+<span class="solution-row__num">05</span>
+<h3 data-i18n="sol_apps_title">Aplicações Web</h3>
+<p data-i18n="sol_apps_text">Aplicações modernas acessíveis diretamente pelo navegador.</p>
+<svg class="solution-row__icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><rect height="13" rx="2" width="18" x="3" y="5"></rect><path d="M8 21h8M12 18v3"></path></svg>
+</article>
+<article class="solution-row reveal">
+<span class="solution-row__num">06</span>
+<h3 data-i18n="sol_automacoes_title">Automações</h3>
+<p data-i18n="sol_automacoes_text">Automação de processos para reduzir tarefas repetitivas e melhorar a operação.</p>
+<svg class="solution-row__icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"></path><circle cx="12" cy="12" r="3.2"></circle></svg>
+</article>
+</div>
+</div>
+</section>
+<!-- ================= PROBLEMA > DEMANDA > SOLUÇÃO ================= -->
+<section class="section section--alt" id="metodo">
+<div class="wrap">
+<div class="section__head reveal">
+<p class="section__label" data-i18n="metodo_label">Método — 03</p>
+<h2 data-i18n="metodo_title">Do problema à solução.</h2>
+</div>
+<div class="flow">
+<div class="flow__step reveal">
+<span class="flow__ghost">01</span>
+<h3 data-i18n="flow_problema_title">Problema</h3>
+<p data-i18n="flow_problema_text">Sua empresa identifica uma necessidade.</p>
+</div>
+<div class="flow__step reveal">
+<span class="flow__ghost">02</span>
+<h3 data-i18n="flow_demanda_title">Demanda</h3>
+<p data-i18n="flow_demanda_text">Entendemos seu objetivo, público e processo.</p>
+</div>
+<div class="flow__step reveal">
+<span class="flow__ghost">03</span>
+<h3 data-i18n="flow_solucao_title">Solução</h3>
+<p data-i18n="flow_solucao_text">Criamos a tecnologia necessária.</p>
+</div>
+</div>
+<p class="flow__footer reveal" data-i18n="flow_footer">Cada negócio possui desafios diferentes. Por isso, desenvolvemos soluções alinhadas ao contexto de cada empresa.</p>
+</div>
+</section>
+<!-- ================= POR QUE ZUNQ ================= -->
+<section class="section" id="diferenciais">
+<div class="wrap why-grid">
+<div class="why-grid__intro reveal">
+<p class="section__label" data-i18n="dif_label">Diferenciais — 04</p>
+<h2 data-i18n-html="dif_title">Não criamos apenas tecnologia.<br/>Criamos experiências.</h2>
+</div>
+<ul class="why-list reveal">
+<li><span aria-hidden="true" class="why-list__bullet"></span><span data-i18n="why_1">Design profissional</span></li>
+<li><span aria-hidden="true" class="why-list__bullet"></span><span data-i18n="why_2">Responsividade</span></li>
+<li><span aria-hidden="true" class="why-list__bullet"></span><span data-i18n="why_3">Performance</span></li>
+<li><span aria-hidden="true" class="why-list__bullet"></span><span data-i18n="why_4">Experiência do usuário</span></li>
+<li><span aria-hidden="true" class="why-list__bullet"></span><span data-i18n="why_5">Código organizado</span></li>
+<li><span aria-hidden="true" class="why-list__bullet"></span><span data-i18n="why_6">Soluções personalizadas</span></li>
+<li><span aria-hidden="true" class="why-list__bullet"></span><span data-i18n="why_7">Foco em conversão</span></li>
+<li><span aria-hidden="true" class="why-list__bullet"></span><span data-i18n="why_8">Tecnologia moderna</span></li>
+</ul>
+</div>
+</section>
+<!-- ================= STACK TECNOLÓGICA ================= -->
+<section class="section section--alt" id="stack">
+<div class="wrap">
+<div class="section__head reveal">
+<p class="section__label" data-i18n="stack_label">Stack — 05</p>
+<h2 data-i18n="stack_title">Tecnologia por trás dos projetos.</h2>
+<p data-i18n="stack_text">Escolhemos a stack certa para cada projeto — não uma fórmula única. Estas são as tecnologias que mais utilizamos no dia a dia.</p>
+</div>
+<div class="stack-grid">
+<div class="stack-group reveal">
+<h3 data-i18n="stack_frontend">Frontend</h3>
+<div class="stack-pills">
+<span class="stack-pill">HTML / CSS / JavaScript</span>
+<span class="stack-pill">React</span>
+<span class="stack-pill">Next.js</span>
+</div>
+</div>
+<div class="stack-group reveal">
+<h3 data-i18n="stack_backend">Backend</h3>
+<div class="stack-pills">
+<span class="stack-pill">Node.js</span>
+</div>
+</div>
+<div class="stack-group reveal">
+<h3 data-i18n="stack_db">Banco de dados</h3>
+<div class="stack-pills">
+<span class="stack-pill">PostgreSQL</span>
+<span class="stack-pill">MySQL</span>
+<span class="stack-pill">MongoDB</span>
+</div>
+</div>
+<div class="stack-group reveal">
+<h3 data-i18n="stack_infra">Infraestrutura</h3>
+<div class="stack-pills">
+<span class="stack-pill">Vercel</span>
+<span class="stack-pill">Google Cloud</span>
+<span class="stack-pill">Google Apps Script</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= PROCESSO ================= -->
+<section class="section" id="processo">
+<div class="wrap">
+<div class="section__head reveal">
+<p class="section__label" data-i18n="processo_label">Processo — 06</p>
+<h2 data-i18n="processo_title">Como trabalhamos.</h2>
+</div>
+<div class="timeline">
+<div class="timeline__item reveal">
+<span class="timeline__num">01</span>
+<h3 data-i18n="tl_conversa_title">Conversa</h3>
+<p data-i18n="tl_conversa_text">Entendemos sua ideia, empresa e objetivo.</p>
+</div>
+<div class="timeline__item reveal">
+<span class="timeline__num">02</span>
+<h3 data-i18n="tl_estrategia_title">Estratégia</h3>
+<p data-i18n="tl_estrategia_text">Definimos estrutura, experiência e solução.</p>
+</div>
+<div class="timeline__item reveal">
+<span class="timeline__num">03</span>
+<h3 data-i18n="tl_dev_title">Desenvolvimento</h3>
+<p data-i18n="tl_dev_text">Transformamos o planejamento em produto digital.</p>
+</div>
+<div class="timeline__item reveal">
+<span class="timeline__num">04</span>
+<h3 data-i18n="tl_entrega_title">Entrega</h3>
+<p data-i18n="tl_entrega_text">Publicamos e entregamos uma solução pronta para utilização.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= PROJETOS ================= -->
+<section class="section section--alt" id="projetos">
+<div class="wrap">
+<div class="section__head reveal">
+<p class="section__label" data-i18n="projetos_label">Projetos — 07</p>
+<h2 data-i18n="projetos_title">Projetos.</h2>
+<p data-i18n="projetos_text">Alguns exemplos do tipo de trabalho que desenvolvemos. Novos projetos serão adicionados aqui em breve.</p>
+</div>
+<div class="projects-grid">
+<article class="project-card reveal">
+<div class="project-card__thumb">
+<img alt="Projeto de aplicação web da ZUNQ" height="600" loading="lazy" src="img/projeto-app-web.svg" width="800"/>
+<div class="project-card__overlay"><span><span data-i18n="ver_projeto">Ver projeto</span><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+<p class="project-card__cat" data-i18n="proj_appweb_cat">Aplicação Web</p>
+<h3 data-i18n="proj_appweb_title">Projeto App Web</h3>
+</article>
+<article class="project-card reveal">
+<div class="project-card__thumb">
+<img alt="Projeto de landing page da ZUNQ" height="600" loading="lazy" src="img/projeto-landing-page.svg" width="800"/>
+<div class="project-card__overlay"><span><span data-i18n="ver_projeto">Ver projeto</span><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+<p class="project-card__cat" data-i18n="proj_landing_cat">Landing Page</p>
+<h3 data-i18n="proj_landing_title">Projeto Landing Page</h3>
+</article>
+<article class="project-card reveal">
+<div class="project-card__thumb">
+<img alt="Projeto de SaaS da ZUNQ" height="600" loading="lazy" src="img/projeto-saas.svg" width="800"/>
+<div class="project-card__overlay"><span><span data-i18n="ver_projeto">Ver projeto</span><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+<p class="project-card__cat" data-i18n="proj_saas_cat">SaaS</p>
+<h3 data-i18n="proj_saas_title">Projeto SaaS</h3>
+</article>
+</div>
+</div>
+</section>
+<!-- ================= SOBRE ================= -->
+<section class="section" id="sobre">
+<div class="wrap about">
+<div class="about__text reveal">
+<p class="section__label" data-i18n="sobre_label">Sobre — 08</p>
+<h2 data-i18n="sobre_title">Sobre a ZUNQ.</h2>
+<p data-i18n="sobre_p1">A ZUNQ COMPANY é especializada em criação de soluções digitais para empresas: sites, landing pages, sistemas web, SaaS e automações, construídos sob medida para cada negócio.</p>
+<p data-i18n="sobre_p2">Trabalhamos com um processo claro — do entendimento do problema até a entrega da solução — para que cada projeto realmente resolva o que a sua empresa precisa.</p>
+</div>
+<div class="about__media reveal">
+<img alt="Equipe ZUNQ COMPANY" height="427" loading="lazy" src="img/equipe-zunq.jpg" width="640"/>
+</div>
+</div>
+</section>
+<!-- ================= CTA PRINCIPAL ================= -->
+<section class="cta">
+<div aria-hidden="true" class="cta__glow"></div>
+<div class="wrap cta__inner reveal">
+<h2 data-i18n="cta_title">Tem um projeto em mente?</h2>
+<p data-i18n="cta_text">Vamos transformar sua ideia em uma solução digital profissional.</p>
+<div class="cta__actions">
+<a class="btn btn--primary btn--lg" data-zunq-event="project_request" data-zunq-location="cta_final" href="#contato">Solicitar um projeto</a>
+<a class="btn btn--ghost btn--lg" data-i18n="cta_whatsapp" data-zunq-event="whatsapp_click" data-zunq-location="cta_final" href="#" id="whatsBtnCta" rel="noopener" target="_blank">Falar com especialista</a>
+</div>
+<p class="hero__note hero__note--center">
+<span aria-hidden="true" class="dot"></span><span data-i18n="note_response_time">Respondemos em questão de minutos.</span></p>
+</div>
+</section>
+<!-- ================= CONTATO / FORMULÁRIO ================= -->
+<section class="section" id="contato">
+<div class="wrap contact">
+<div class="contact__info reveal">
+<p class="section__label" data-i18n="contato_label">Contato — 09</p>
+<h2 data-i18n="contato_title">Vamos conversar sobre seu projeto.</h2>
+<p data-i18n="contato_text">Preencha o formulário para agendar uma conversa, ou fale agora mesmo pelo WhatsApp.</p>
+<a class="btn btn--ghost" data-i18n="cta_whatsapp_contact" data-zunq-event="whatsapp_click" data-zunq-location="contato" href="#" id="whatsBtnContato" rel="noopener" target="_blank">Falar com especialista</a>
+<p class="hero__note">
+<span aria-hidden="true" class="dot"></span><span data-i18n="note_response_time">Respondemos em questão de minutos.</span></p>
+<div class="contact__details">
+<a href="mailto:zunq@outlook.com.br">zunq@outlook.com.br</a>
+<a href="https://instagram.com/zunqbr" rel="noopener" target="_blank">@zunqbr</a>
+</div>
+</div>
+<form class="contact__form reveal" id="contactForm" novalidate="">
+<div class="field">
+<label data-i18n="label_nome" for="nome">Nome</label>
+<input autocomplete="name" id="nome" name="nome" required="" type="text"/>
+<span class="field__error" data-error-for="nome"></span>
+</div>
+<div class="field">
+<label data-i18n="label_email" for="email">E-mail</label>
+<input autocomplete="email" id="email" name="email" required="" type="email"/>
+<span class="field__error" data-error-for="email"></span>
+</div>
+<div class="field">
+<label data-i18n="label_telefone" for="telefone">Telefone/WhatsApp</label>
+<input autocomplete="tel" id="telefone" name="telefone" required="" type="tel"/>
+<span class="field__error" data-error-for="telefone"></span>
+</div>
+<div class="field">
+<label data-i18n="label_data" for="data">Data preferida</label>
+<input id="data" name="data" required="" type="date"/>
+<span class="field__error" data-error-for="data"></span>
+</div>
+<div class="field field--checkbox">
+<input id="consentimento" name="consentimento" required="" type="checkbox"/>
+<label data-i18n="label_consent" for="consentimento">Concordo em fornecer meus dados para que a ZUNQ COMPANY possa entrar em contato sobre minha solicitação.</label>
+<span class="field__error" data-error-for="consentimento"></span>
+</div>
+<button class="btn btn--primary btn--lg btn--block" id="submitBtn" type="submit">
+<span class="btn__label" data-i18n="btn_submit">Solicitar reunião</span>
+<span aria-hidden="true" class="btn__spinner"></span>
+</button>
+<div aria-live="polite" class="form-feedback" id="formFeedback" role="status"></div>
+<div class="trust-badges">
+<div class="trust-badge">
+<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8.2-7 9-4-.8-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+<span data-i18n="trust_ssl">Site seguro (SSL)</span>
+</div>
+<div class="trust-badge">
+<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><rect height="10" rx="2" width="16" x="4" y="10"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg>
+<span data-i18n="trust_data">Dados protegidos</span>
+</div>
+<div class="trust-badge">
+<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 3l8 4v5c0 4.6-3.3 8.6-8 9.9-4.7-1.3-8-5.3-8-9.9V7z"></path></svg>
+<span data-i18n="trust_lgpd">Conforme a LGPD</span>
+</div>
+<div class="trust-badge">
+<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9 12l2 2 4-4"></path></svg>
+<span data-i18n="trust_nospam">Sem spam, resposta garantida</span>
+</div>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+<div class="wrap footer__inner">
+<div class="footer__brand">
+<a class="navbar__logo" href="#topo">
+<img alt="ZUNQ COMPANY" class="logo-mark" height="28" src="img/logo.png"/>
+</a>
+<p data-i18n="footer_tagline">Soluções digitais para empresas.</p>
+</div>
+<nav aria-label="Links do rodapé" class="footer__links">
+<a data-i18n="nav_home" href="#topo">Início</a>
+<a data-i18n="nav_solucoes" href="#solucoes">Soluções</a>
+<a data-i18n="nav_modelos" href="/modelos">Modelos</a>
+<a data-i18n="nav_projetos" href="#projetos">Projetos</a>
+<a data-i18n="nav_sobre" href="#sobre">Sobre</a>
+<a data-i18n="nav_contato" href="#contato">Contato</a>
+</nav>
+<div class="footer__contact">
+<a href="mailto:zunq@outlook.com.br">zunq@outlook.com.br</a>
+<a href="https://instagram.com/zunqbr" rel="noopener" target="_blank">@zunqbr</a>
+</div>
+</div>
+<div class="wrap footer__trust">
+<span class="footer__trust-item">
+<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8.2-7 9-4-.8-7-4.5-7-9V6z"></path></svg><span data-i18n="footer_trust_ssl">Conexão criptografada (SSL)</span></span>
+<span class="footer__trust-item">
+<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><rect height="10" rx="2" width="16" x="4" y="10"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg><span data-i18n="footer_trust_data">Privacidade e dados protegidos</span></span>
+<span class="footer__trust-item">
+<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 3l8 4v5c0 4.6-3.3 8.6-8 9.9-4.7-1.3-8-5.3-8-9.9V7z"></path></svg><span data-i18n="footer_trust_verified">Empresa verificada</span></span>
+</div>
+<div class="wrap footer__bottom">
+<p data-i18n="footer_copyright">© 2026 ZUNQ COMPANY. Todos os direitos reservados.</p>
+<nav aria-label="Links legais" class="footer__legal">
+<a data-i18n="footer_privacy" href="/privacidade">Política de Privacidade</a>
+<a data-i18n="footer_terms" href="/termos">Termos de Uso</a>
+</nav>
+</div>
+</footer>
+<script src="/analytics/tracker/tracker.js"></script>
+<script src="i18n.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
