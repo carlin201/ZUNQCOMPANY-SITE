@@ -22,6 +22,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,"script",
+"https://connect.facebook.net/en_US/fbevents.js");
+fbq("init", "934546016382273");
+fbq("track", "PageView");
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=934546016382273&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -47,7 +64,7 @@
     </nav>
 
     <div class="navbar__actions">
-      <a href="#contato" class="btn btn--primary btn--sm">Falar com a Zunq</a>
+      <a href="#contato" class="btn btn--primary btn--sm" data-zunq-event="cta_click" data-zunq-location="navbar">Falar com a Zunq</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
@@ -64,7 +81,7 @@
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="#contato" class="btn btn--primary">Falar com a Zunq</a>
+    <a href="#contato" class="btn btn--primary" data-zunq-event="cta_click" data-zunq-location="navbar_mobile">Falar com a Zunq</a>
   </div>
 </header>
 
@@ -82,8 +99,8 @@
       <p class="hero__text">Criamos sites, landing pages, SaaS e soluções digitais pensadas para transformar ideias em experiências profissionais, modernas e eficientes.</p>
 
       <div class="hero__actions">
-        <a href="#contato" class="btn btn--primary btn--lg">Solicitar um projeto</a>
-        <a href="#" id="whatsBtnHero" class="btn btn--ghost btn--lg" target="_blank" rel="noopener">Falar agora</a>
+        <a href="#contato" class="btn btn--primary btn--lg" data-zunq-event="project_request" data-zunq-location="hero">Solicitar um projeto</a>
+        <a href="#" id="whatsBtnHero" class="btn btn--ghost btn--lg" target="_blank" rel="noopener" data-zunq-event="whatsapp_click" data-zunq-location="hero">Falar agora</a>
       </div>
       <p class="hero__note">
         <span class="dot" aria-hidden="true"></span>
@@ -348,8 +365,8 @@
     <h2>Tem um projeto em mente?</h2>
     <p>Vamos transformar sua ideia em uma solução digital profissional.</p>
     <div class="cta__actions">
-      <a href="#contato" class="btn btn--primary btn--lg">Solicitar um projeto</a>
-      <a href="#" id="whatsBtnCta" class="btn btn--ghost btn--lg" target="_blank" rel="noopener">Falar agora</a>
+      <a href="#contato" class="btn btn--primary btn--lg" data-zunq-event="project_request" data-zunq-location="cta_final">Solicitar um projeto</a>
+      <a href="#" id="whatsBtnCta" class="btn btn--ghost btn--lg" target="_blank" rel="noopener" data-zunq-event="whatsapp_click" data-zunq-location="cta_final">Falar agora</a>
     </div>
     <p class="hero__note hero__note--center">
       <span class="dot" aria-hidden="true"></span>
@@ -366,7 +383,7 @@
       <h2>Vamos conversar sobre seu projeto.</h2>
       <p>Preencha o formulário para agendar uma conversa, ou fale agora mesmo pelo WhatsApp.</p>
 
-      <a href="#" id="whatsBtnContato" class="btn btn--ghost" target="_blank" rel="noopener">Falar agora pelo WhatsApp</a>
+      <a href="#" id="whatsBtnContato" class="btn btn--ghost" target="_blank" rel="noopener" data-zunq-event="whatsapp_click" data-zunq-location="contato">Falar agora pelo WhatsApp</a>
       <p class="hero__note">
         <span class="dot" aria-hidden="true"></span>
         Respondemos em questão de minutos.
@@ -455,6 +472,7 @@
   </div>
 </footer>
 
+<script src="/analytics/tracker/tracker.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
