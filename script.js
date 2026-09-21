@@ -21,152 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCardTilt();
   setupContactForm();
   setupScrollSpy();
-  setupCounters();
-  setupLanguageSwitch();
+  setupAnalyticsTracking();
 });
-
-// ---------- SELETOR DE IDIOMA ----------
-function setupLanguageSwitch() {
-  if (typeof ZUNQ_I18N === "undefined") return;
-
-  const STORAGE_KEY = "zunq_lang";
-  const langNames = { pt: "PT", en: "EN", es: "ES" };
-
-  const switchEl = document.getElementById("langSwitch");
-  const btn = document.getElementById("langSwitchBtn");
-  const label = document.getElementById("langSwitchLabel");
-  const menu = document.getElementById("langSwitchMenu");
-  const mobileMenu = document.getElementById("langSwitchMobile");
-
-  function applyLanguage(lang) {
-    const dict = ZUNQ_I18N[lang];
-    if (!dict) return;
-
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      if (dict[key] !== undefined) el.textContent = dict[key];
-    });
-
-    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-html");
-      if (dict[key] !== undefined) el.innerHTML = dict[key];
-    });
-
-    document.documentElement.setAttribute(
-      "lang",
-      lang === "pt" ? "pt-BR" : lang === "en" ? "en" : "es"
-    );
-
-    if (label) label.textContent = langNames[lang] || lang.toUpperCase();
-
-    document.querySelectorAll("[data-lang]").forEach((item) => {
-      item.classList.toggle("is-active", item.dataset.lang === lang);
-    });
-
-    try {
-      localStorage.setItem(STORAGE_KEY, lang);
-    } catch (e) {
-      /* ignore */
-    }
-  }
-
-  function detectInitialLang() {
-    let saved;
-    try {
-      saved = localStorage.getItem(STORAGE_KEY);
-    } catch (e) {
-      saved = null;
-    }
-    if (saved && ZUNQ_I18N[saved]) return saved;
-
-    const browserLang = (navigator.language || "pt").slice(0, 2).toLowerCase();
-    if (ZUNQ_I18N[browserLang]) return browserLang;
-    return "pt";
-  }
-
-  applyLanguage(detectInitialLang());
-
-  if (btn && menu) {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = menu.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", String(isOpen));
-      switchEl.classList.toggle("is-open", isOpen);
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!switchEl.contains(e.target)) {
-        menu.classList.remove("is-open");
-        btn.setAttribute("aria-expanded", "false");
-        switchEl.classList.remove("is-open");
-      }
-    });
-
-    menu.querySelectorAll("[data-lang]").forEach((item) => {
-      item.addEventListener("click", () => {
-        applyLanguage(item.dataset.lang);
-        menu.classList.remove("is-open");
-        btn.setAttribute("aria-expanded", "false");
-        switchEl.classList.remove("is-open");
-      });
-    });
-  }
-
-  if (mobileMenu) {
-    mobileMenu.querySelectorAll("[data-lang]").forEach((item) => {
-      item.addEventListener("click", () => applyLanguage(item.dataset.lang));
-    });
-  }
-}
-
-// ---------- CONTADORES ANIMADOS (STATS) ----------
-function setupCounters() {
-  const counters = document.querySelectorAll(".stat__num");
-  if (!counters.length) return;
-
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  const animateCounter = (el) => {
-    const target = parseFloat(el.dataset.count);
-    const suffix = el.dataset.suffix || "";
-    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-      el.textContent = `${target}${suffix}`;
-      return;
-    }
-    const duration = 1400;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      const value = Math.round(target * eased);
-      el.textContent = `${value}${suffix}`;
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-
-  if (!("IntersectionObserver" in window)) {
-    counters.forEach(animateCounter);
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  counters.forEach((el) => observer.observe(el));
-}
 
 // ---------- WHATSAPP ----------
 function setupWhatsappLinks() {
@@ -351,6 +207,28 @@ function setupScrollSpy() {
   sections.forEach(({ section }) => observer.observe(section));
 }
 
+// ---------- RASTREAMENTO (ZUNQ ANALYTICS) ----------
+// Delegação de clique: qualquer elemento com data-zunq-event dispara o
+// evento correspondente automaticamente (usado nos botões de
+// WhatsApp, "Solicitar um projeto" e "Falar com a Zunq" da navbar).
+function setupAnalyticsTracking() {
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("[data-zunq-event]");
+    if (!el) return;
+    const eventName = el.getAttribute("data-zunq-event");
+    const location = el.getAttribute("data-zunq-location") || undefined;
+
+    if (window.ZUNQAnalytics) {
+      window.ZUNQAnalytics.track(eventName, location ? { location } : undefined);
+    }
+
+    // Pixel da Meta: eventos padrão de conversão, além do PageView automático.
+    if (typeof fbq === "function" && eventName === "whatsapp_click") {
+      fbq("track", "Contact");
+    }
+  });
+}
+
 // ---------- FORMULÁRIO DE CONTATO ----------
 function setupContactForm() {
   const form = document.getElementById("contactForm");
@@ -366,6 +244,17 @@ function setupContactForm() {
     data: form.querySelector("#data"),
     consentimento: form.querySelector("#consentimento"),
   };
+
+  let formStarted = false;
+  form.addEventListener(
+    "focusin",
+    () => {
+      if (formStarted) return;
+      formStarted = true;
+      if (window.ZUNQAnalytics) window.ZUNQAnalytics.track("form_start");
+    },
+    { once: true }
+  );
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -433,6 +322,8 @@ function setupContactForm() {
     feedback.className = "form-feedback is-success";
     feedback.textContent =
       "Solicitação enviada com sucesso. Recebemos seus dados e entraremos em contato para confirmar a reunião.";
+    if (window.ZUNQAnalytics) window.ZUNQAnalytics.track("form_submit");
+    if (typeof fbq === "function") fbq("track", "Lead");
   }
 
   function showError() {
