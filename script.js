@@ -7,7 +7,7 @@
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzWGOePbsQcIPqKChQVUrMaeVg6Bfi5lmEz9HLqUzIsabxckSQqQckpT_eRaJIhr0-aMA/exec";
 
 // Insira aqui o número de WhatsApp da ZUNQ, no formato internacional, apenas números (ex: 5566999999999)
-const WHATSAPP_NUMBER = "INSIRA_AQUI_O_NUMERO";
+const WHATSAPP_NUMBER = "11944429596";
 
 const WHATSAPP_MESSAGE = "Olá, ZUNQ! Tenho interesse em criar um projeto digital para minha empresa e gostaria de conversar.";
 
